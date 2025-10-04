@@ -30,7 +30,7 @@ const CriarTorneio: React.FC = () => {
         return;
       }
 
-      const res = await axios.post("http://localhost:5000/api/admin/tournaments", {
+      const res = await axios.post("https://backend-p-scrim.onrender.com/api/admin/tournaments", {
         orgId,
         title: nome,
         descricao: descricao,

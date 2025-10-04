@@ -48,7 +48,7 @@ const RegistrarScrim: React.FC = () => {
 
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:5000/api/admin/scrims/${user.id}`);
+      const res = await fetch(`https://backend-p-scrim.onrender.com/api/admin/scrims/${user.id}`);
       const data = await res.json();
       setScrims(data.scrims || []);
     } catch (err) {
@@ -92,7 +92,7 @@ const RegistrarScrim: React.FC = () => {
     try {
       // Envia pontos da queda para o backend
       const response = await fetch(
-        `http://localhost:5000/api/admin/scrims/${activeScrimId}/points`,
+        `https://backend-p-scrim.onrender.com/api/admin/scrims/${activeScrimId}/points`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -110,7 +110,7 @@ const RegistrarScrim: React.FC = () => {
 
       // ✅ Buscar os dados atualizados da queda do backend
       const updatedQuedaRes = await fetch(
-        `http://localhost:5000/api/admin/scrims/${activeScrimId}/queda/${activeTab + 1}`
+        `https://backend-p-scrim.onrender.com/api/admin/scrims/${activeScrimId}/queda/${activeTab + 1}`
       );
 
       const updatedQuedaData = await updatedQuedaRes.json();
@@ -135,7 +135,7 @@ const RegistrarScrim: React.FC = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/scrims/${activeScrimId}/players`,
+        `https://backend-p-scrim.onrender.com/api/admin/scrims/${activeScrimId}/players`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -173,7 +173,7 @@ const RegistrarScrim: React.FC = () => {
   const deleteScrim = async (scrimId: number) => {
     if (!confirm("Deseja realmente excluir esta scrim?")) return;
     try {
-      await fetch(`http://localhost:5000/api/admin/scrims/${scrimId}`, {
+      await fetch(`https://backend-p-scrim.onrender.com/api/admin/scrims/${scrimId}`, {
         method: "DELETE",
       });
       setScrims(scrims.filter((s) => s.id !== scrimId));
@@ -192,7 +192,7 @@ const RegistrarScrim: React.FC = () => {
 
   const saveEdit = async (scrimId: number) => {
     try {
-      await fetch(`http://localhost:5000/api/admin/scrims/${scrimId}`, {
+      await fetch(`https://backend-p-scrim.onrender.com/api/admin/scrims/${scrimId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date: editDate, time: editTime }),

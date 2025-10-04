@@ -17,7 +17,7 @@ const Scrims: React.FC = () => {
     useEffect(() => {
         const fetchScrims = async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/scrims");
+                const res = await fetch("https://backend-p-scrim.onrender.com/api/scrims");
                 const data = await res.json();
                 setScrims(data);
             } catch (err) {

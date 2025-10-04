@@ -50,7 +50,7 @@ const ScrimDetails: React.FC = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/api/scrims/org/${orgId}/details?date=${selectedDate}&time=${selectedTime}`
+        `https://backend-p-scrim.onrender.com/api/scrims/org/${orgId}/details?date=${selectedDate}&time=${selectedTime}`
       );
       const data = await res.json();
 

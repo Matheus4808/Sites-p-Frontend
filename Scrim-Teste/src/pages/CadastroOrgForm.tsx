@@ -53,7 +53,7 @@ const CadastroOrgForm: React.FC = () => {
       formData.append("instagram", instagram);
       if (logo) formData.append("logo_file", logo);
 
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch("https://backend-p-scrim.onrender.com/api/register", {
         method: "POST",
         body: formData,
       });

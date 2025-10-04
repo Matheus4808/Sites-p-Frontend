@@ -36,7 +36,7 @@ const EditarOrg: React.FC = () => {
       if (!user?.id) return;
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/organizations/${user.id}`
+          `https://backend-p-scrim.onrender.com/api/organizations/${user.id}`
         );
 
         setOrg({
@@ -47,7 +47,7 @@ const EditarOrg: React.FC = () => {
         });
 
         if (data.logo_path) {
-          setLogoPreview(`http://localhost:5000/${data.logo_path}`);
+          setLogoPreview(`https://backend-p-scrim.onrender.com/${data.logo_path}`);
         }
       } catch (err) {
         console.error("Erro ao carregar organização:", err);
@@ -114,7 +114,7 @@ const EditarOrg: React.FC = () => {
       if (logoFile) formData.append("logo_file", logoFile);
 
       await axios.put(
-        `http://localhost:5000/api/organizations/${user.id}`,
+        `https://backend-p-scrim.onrender.com/api/organizations/${user.id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
