@@ -34,9 +34,12 @@ const ScrimAdmin: React.FC = () => {
     { id: 2, date: "2025-09-22", time: "15:00" },
   ]);
 
+
+
   // Mock de times
   const [teams, setTeams] = useState<TeamData[]>([]);
   const [players, setPlayers] = useState<PlayerData[]>([]);
+
 
   // Função para adicionar evento
   const addEvent = () => {
