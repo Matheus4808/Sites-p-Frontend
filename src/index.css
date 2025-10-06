@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+@tailwind utilities;
+
+/* Estilo global refinado */
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb; /* cor clara de fundo */
+  color: #1e293b; /* cor de texto */
+  min-height: 100vh;
+}
+
+/* Scrollbar mais discreta */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-rose-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-rose-400 rounded-full hover:bg-rose-500 transition-colors;
+}
+
+/* Animações suaves globais */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
