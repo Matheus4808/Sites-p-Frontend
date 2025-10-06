@@ -2,14 +2,15 @@ import React from "react";
 
 export default function ItemModal({ item, onClose }) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/40" onClick={onClose}></div>
-      <div className="relative bg-white rounded-2xl shadow-xl w-11/12 max-w-2xl p-6 z-50">
-        <div className="flex gap-4">
+
+      <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-2xl p-6 z-50 overflow-y-auto max-h-[90vh]">
+        <div className="flex flex-col md:flex-row gap-4">
           <img
             src={item.img}
             alt={item.name}
-            className="w-36 h-36 object-cover rounded-lg"
+            className="w-full md:w-36 h-36 object-cover rounded-lg mx-auto md:mx-0"
           />
           <div className="flex-1">
             <h3 className="text-xl font-bold text-rose-600">{item.name}</h3>
@@ -37,14 +38,14 @@ export default function ItemModal({ item, onClose }) {
               />
             </div>
 
-            <div className="mt-4 flex items-center justify-end gap-2">
+            <div className="mt-4 flex flex-col-reverse md:flex-row items-stretch md:items-center justify-end gap-2">
               <button
                 onClick={onClose}
-                className="px-4 py-2 rounded-lg border text-slate-600"
+                className="px-4 py-2 rounded-lg border text-slate-600 w-full md:w-auto"
               >
                 Cancelar
               </button>
-              <button className="px-4 py-2 rounded-lg bg-rose-500 text-white">
+              <button className="px-4 py-2 rounded-lg bg-rose-500 text-white w-full md:w-auto">
                 Adicionar ao carrinho
               </button>
             </div>
